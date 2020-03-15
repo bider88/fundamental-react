@@ -25,7 +25,7 @@ import ReactDom from 'react-dom'
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
 
-const CardFruit = () => (
+const SimpleCardFruit = () => (
   <div>
     <h3>title</h3>
     <hr/>
@@ -33,8 +33,41 @@ const CardFruit = () => (
   </div>
 )
 
+const CardFruit = props => {
+  console.log('props', props);
+  return (
+    <div>
+      <h3>{props.name}</h3>
+      <hr/>
+      <p>$ {props.price}</p>
+    </div>
+  )
+}
+
+const ObjectCardFruit = props => {
+  console.log('props', props);
+  return (
+    <div>
+      <h3>{props.fruit.name}</h3>
+      <hr/>
+      <p>$ {props.fruit.price}</p>
+    </div>
+  )
+}
+
+const fruit = {
+  name: 'banana',
+  price: 4.6
+}
+
 const App = () => (
-  <CardFruit/>
+  <div>
+    <SimpleCardFruit/>
+    <CardFruit name={'Cocoa'} price={12.3} />
+    <CardFruit name='Strawberry' price={7.9} />
+    <CardFruit name='Kiwi' price={10.1} />
+    <ObjectCardFruit fruit={ fruit } />
+  </div>
 )
 
 // const Complete = React.createElement('div', null, <App/>)
