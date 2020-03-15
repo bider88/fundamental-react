@@ -1,12 +1,43 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDom from 'react-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// const world = 'world'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// const user = {
+//   name: 'Pepe',
+//   age: 24,
+//   gender: 'male',
+//   country: 'MEX'
+// }
+
+// const nationality = user => `I'm from ${user.country}`
+
+// const App = <h1>Hello {world} from react</h1>
+// const User = <p>My name is {user.name} and I'm {user.age} old.</p>
+// const Info = <p>{nationality(user)}</p>
+
+// const Complete = React.createElement('div', null, App, User, Info)
+
+// ReactDom.render(Complete, document.getElementById('root'))
+
+
+
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+
+const CardFruit = () => (
+  <div>
+    <h3>title</h3>
+    <hr/>
+    <p>Description...</p>
+  </div>
+)
+
+const App = () => (
+  <CardFruit/>
+)
+
+// const Complete = React.createElement('div', null, <App/>)
+
+// ReactDom.render(Complete, document.getElementById('root'))
+ReactDom.render(<App/>, document.getElementById('root'))
