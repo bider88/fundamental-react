@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
+import './styles.scss'
 
 // const world = 'world'
 
@@ -28,8 +29,8 @@ import ReactDom from 'react-dom'
 const SimpleCardFruit = () => (
   <div>
     <h3>title</h3>
-    <hr/>
     <p>Description...</p>
+    <hr/>
   </div>
 )
 
@@ -38,8 +39,8 @@ const CardFruit = props => {
   return (
     <div>
       <h3>{props.name}</h3>
-      <hr/>
       <p>$ {props.price}</p>
+      <hr/>
     </div>
   )
 }
@@ -49,8 +50,8 @@ const ObjectCardFruit = props => {
   return (
     <div>
       <h3>{props.fruit.name}</h3>
-      <hr/>
       <p>$ {props.fruit.price}</p>
+      <hr/>
     </div>
   )
 }
@@ -65,8 +66,10 @@ const App = () => (
     <SimpleCardFruit/>
     <CardFruit name={'Cocoa'} price={12.3} />
     <CardFruit name='Strawberry' price={7.9} />
-    <CardFruit name='Kiwi' price={10.1} />
+    <CardFruit name='Orange' price={10.1} />
     <ObjectCardFruit fruit={ fruit } />
+    <br/>
+    <button className="button is-danger is-outlined">Hello</button>
   </div>
 )
 

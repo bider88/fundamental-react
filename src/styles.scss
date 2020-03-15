@@ -1,0 +1,16 @@
+// import starting from the src/ folder
+@import "sass/variables.scss";
+
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/base/_all.sass";
+@import "~bulma/sass/elements/button.sass";
+@import "~bulma/sass/layout/section.sass";
+
+// we can use the $primaryColor variable now
+h1, h2, h3 {
+  color: $primaryColor;
+}
+
+body {
+  margin: 5px;
+}
