@@ -88,37 +88,16 @@ ReactDom.render(<App/>, document.getElementById('root'))
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class CardFruit extends React.Component {
+
+  state = {
+    quantity: 0
+  }
+
+  add = () => this.setState({ quantity: this.state.quantity + 1 })
   
-  constructor() {
-    super()
-
-    // this.add = this.add.bind(this)
-    // this.remove = this.remove.bind(this)
-
-    const METHODS = [
-      'add',
-      'remove',
-      'clear'
-    ]
-
-    METHODS.forEach(method => this[method] = this[method].bind(this))
-
-    this.state = {
-      quantity: 0
-    }
-  }
-
-  add() {
-    this.setState({ quantity: this.state.quantity + 1 })
-  }
+  remove = () => this.setState({ quantity: this.state.quantity - 1 })
   
-  remove() {
-    this.setState({ quantity: this.state.quantity - 1 })
-  }
-  
-  clear() {
-    this.setState({ quantity: 0 })
-  }
+  clear = () => this.setState({ quantity: 0 })
 
   render() {
       return (
