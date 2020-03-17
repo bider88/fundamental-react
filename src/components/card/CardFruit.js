@@ -28,12 +28,13 @@ class CardFruit extends React.Component {
         <div style={ styles }>
           <h3>{this.props.name}</h3>
           <p><small>Quantity: { this.state.quantity }</small></p>
-          <button className="button is-link" onClick={ this.add } title="add"> + </button>
-          <button className="button is-warning" onClick={ this.remove } title="remove"> - </button>
-          <button className="button is-primary" onClick={ this.clear } title="clear"> x </button>
+          <div className="buttons">
+            <button className="button is-link is-light" onClick={ this.add } title="add"> + </button>
+            <button className="button is-warning is-light" onClick={ this.remove } title="remove"> - </button>
+            <button className="button is-primary is-light" onClick={ this.clear } title="clear"> x </button>
+          </div>
           <p>$ {this.props.price}</p>
           <p><b>Total: </b> ${ (this.state.quantity * this.props.price).toFixed(2) }</p>
-          <hr/>
         </div>
       )
   }
