@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './CardFruit.module.scss'
 
 class CardFruit extends React.Component {
 
@@ -13,25 +14,17 @@ class CardFruit extends React.Component {
   clear = () => this.setState({ quantity: 0 })
 
   render() {
+    const cardFruitStyle = `${styles['card-fruit']} ${this.state.quantity > 0 ? styles['has-items'] : 
+                            this.state.quantity < 0 ? styles['error-items'] : styles['no-items']}`
 
-    const hasItems = this.state.quantity > 0 ? '#44fc5f' : this.state.quantity < 0 ? '#ff6d19' : '#c9c9c9'
-
-    const styles = {
-      border: '2px solid',
-      borderColor: hasItems,
-      padding: '1em',
-      marginBottom: '5px',
-      borderRadius: '5px',
-      transition: 'all 400ms ease-out'
-    }
       return (
-        <div style={ styles }>
+        <div className={ cardFruitStyle }>
           <h3>{this.props.name}</h3>
           <p><small>Quantity: { this.state.quantity }</small></p>
           <div className="buttons">
-            <button className="button is-link is-light" onClick={ this.add } title="add"> + </button>
-            <button className="button is-warning is-light" onClick={ this.remove } title="remove"> - </button>
-            <button className="button is-primary is-light" onClick={ this.clear } title="clear"> x </button>
+            <button className="button is-link is-light" onClick={ this.add } title="add"> <b>+</b> </button>
+            <button className="button is-warning is-light" onClick={ this.remove } title="remove"> <b>-</b> </button>
+            <button className="button is-primary is-light" onClick={ this.clear } title="clear"> <b>x</b> </button>
           </div>
           <p>$ {this.props.price}</p>
           <p><b>Total: </b> ${ (this.state.quantity * this.props.price).toFixed(2) }</p>
