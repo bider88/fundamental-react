@@ -1,5 +1,5 @@
 import React from 'react'
-import CardFruit from './components/card/CardFruit'
+import CardFruit from './components/CardFruit'
 
 const App = () => (
   <div>
